@@ -1,0 +1,2 @@
+bool    backward       # Set to true to drive backwards (once a new goal is given to the local planner)
+---

@@ -1,0 +1,5 @@
+bool software_emergency_stop
+bool hardware_emergency_stop
+int64 data
+---
+bool ok

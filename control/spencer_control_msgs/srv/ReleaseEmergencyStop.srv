@@ -1,0 +1,3 @@
+string  magicWord   # has to be set to "RELEASE_EMERGENCY_STOP" in order for the command to have an effect
+---
+bool success

@@ -1,0 +1,8 @@
+# Service for asking the topological map for all labels of a certain
+# type (all gates, all info desks, etc). (The label messages can then
+# be queried for which topological nodes have that label.)
+
+string type
+---
+Label[] labels
+

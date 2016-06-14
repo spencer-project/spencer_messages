@@ -1,0 +1,5 @@
+string name
+geometry_msgs/Polygon area
+string linked_to_entity
+---
+bool result

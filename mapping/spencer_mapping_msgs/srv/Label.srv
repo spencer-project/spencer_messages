@@ -1,0 +1,8 @@
+# Service for asking the topological map for which node(s) have a
+# specific label.
+
+string type
+uint32 id
+---
+Label label
+

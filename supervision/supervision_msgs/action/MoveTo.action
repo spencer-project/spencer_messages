@@ -1,0 +1,9 @@
+string destination
+string[] path
+geometry_msgs/Pose[] coordinates
+---
+string status
+string details
+---
+string current_node
+geometry_msgs/Pose current_pose

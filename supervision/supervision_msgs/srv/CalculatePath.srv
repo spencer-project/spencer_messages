@@ -1,0 +1,5 @@
+string source
+string dest
+---
+int16 distance
+string[] path

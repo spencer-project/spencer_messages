@@ -1,0 +1,3 @@
+string node
+---
+string[] connected_nodes

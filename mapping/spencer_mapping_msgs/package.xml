@@ -1,0 +1,35 @@
+<?xml version="1.0"?>
+<package>
+
+  <name>spencer_mapping_msgs</name>
+  <version>0.0.0</version>
+  <description>Messages used for mapping-related tasks in SPENCER</description>
+
+  <maintainer email="rafael.valencia-carrena@oru.se">Rafael Valencia-Carrena</maintainer>
+  <maintainer email="martin.magnusson@oru.se">Martin Magnusson</maintainer>
+
+  
+  <license>TODO</license>
+  
+  <author email="rafael.valencia-carrena@oru.se">Rafael Valencia-Carrena</author>
+  <author email="martin.magnusson@oru.se">Martin Magnusson</author>
+
+
+  <buildtool_depend>catkin</buildtool_depend>
+  <build_depend>message_generation</build_depend>
+  <build_depend>roscpp</build_depend>
+  <build_depend>geometry_msgs</build_depend>
+  <build_depend>nav_msgs</build_depend>
+  <build_depend>sensor_msgs</build_depend>
+  <build_depend>std_msgs</build_depend>
+
+  
+  <run_depend>message_runtime</run_depend>
+  <run_depend>roscpp</run_depend>
+  <run_depend>geometry_msgs</run_depend>
+  <run_depend>nav_msgs</run_depend>
+  <run_depend>sensor_msgs</run_depend>
+  <run_depend>std_msgs</run_depend>
+
+
+</package>
