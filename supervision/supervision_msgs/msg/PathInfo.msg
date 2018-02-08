@@ -1,4 +1,0 @@
-int16 total_seconds
-float32 total_length
-int16 remaining_seconds
-float32 remaining_length

@@ -1,7 +1,0 @@
-# Inform map publisher of the current region of interest. All
-# published metric maps will be cropped to within the two corners
-# given in the request.
-
-Point2D corner1
-Point2D corner2
----

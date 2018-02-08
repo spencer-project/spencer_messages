@@ -1,2 +1,0 @@
-bool is_stopped
-bool is_paused

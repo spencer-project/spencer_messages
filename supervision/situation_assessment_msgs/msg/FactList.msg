@@ -1,1 +1,0 @@
-Fact[] fact_list

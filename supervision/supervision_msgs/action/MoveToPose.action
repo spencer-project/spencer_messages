@@ -1,6 +1,0 @@
-geometry_msgs/Pose[] poses
----
-string status
-string details
----
-geometry_msgs/Pose[] last_pose

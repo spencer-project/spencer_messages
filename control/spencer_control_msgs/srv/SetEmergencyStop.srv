@@ -1,4 +1,0 @@
-string componentId  # Name of the node triggering the emergency stop, please set to ros::this_node::getName()!
-string reason       # Will be logged, please specify reason for stopping!
----
-bool success
