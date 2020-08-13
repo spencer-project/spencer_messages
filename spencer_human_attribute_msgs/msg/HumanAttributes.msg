@@ -1,5 +1,5 @@
 std_msgs/Header header
 
 # One entry per attribute type per person
-CategoricalAttribute[]   categoricalAttributes
-ScalarAttribute[]       scalarAttributes
+CategoricalAttribute[]   categorical_attributes
+ScalarAttribute[]       scalar_attributes

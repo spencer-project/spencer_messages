@@ -1,52 +1,41 @@
-cmake_minimum_required(VERSION 2.8.3)
+cmake_minimum_required(VERSION 3.5)
 project(spencer_tracking_msgs)
 
-find_package(catkin REQUIRED COMPONENTS
-  roscpp
-  roslib
-  std_msgs
-  geometry_msgs
-  message_generation
+# Default to C++14
+if(NOT CMAKE_CXX_STANDARD)
+  set(CMAKE_CXX_STANDARD 14)
+endif()
+
+if(CMAKE_COMPILER_IS_GNUCXX OR CMAKE_CXX_COMPILER_ID MATCHES "Clang")
+  add_compile_options(-Wall -Wextra -Wpedantic)
+endif()
+
+find_package(ament_cmake REQUIRED)
+find_package(builtin_interfaces REQUIRED)
+find_package(geometry_msgs REQUIRED)
+find_package(std_msgs REQUIRED)
+find_package(rosidl_default_generators REQUIRED)
+
+rosidl_generate_interfaces(${PROJECT_NAME}
+  "msg/DetectedPerson.msg"
+  "msg/DetectedPersons.msg"
+  "msg/CompositeDetectedPerson.msg"
+  "msg/CompositeDetectedPersons.msg"
+  "msg/PersonTrajectory.msg"
+  "msg/PersonTrajectoryEntry.msg"
+  "msg/TrackedPerson.msg"
+  "msg/TrackedPersons.msg"
+  "msg/TrackedPerson2d.msg"
+  "msg/TrackedPersons2d.msg"
+  "msg/TrackedGroup.msg"
+  "msg/TrackedGroups.msg"
+  "msg/ImmDebugInfo.msg"
+  "msg/ImmDebugInfos.msg"
+  "msg/TrackingTimingMetrics.msg"
+  "srv/GetPersonTrajectories.srv"
+  DEPENDENCIES builtin_interfaces geometry_msgs std_msgs
 )
 
-################################################
-## Declare ROS messages, services and actions ##
-################################################
+ament_export_dependencies(rosidl_default_runtime)
 
-# Generate messages in the 'msg' folder
-add_message_files(
-   FILES
-   DetectedPerson.msg
-   DetectedPersons.msg
-   CompositeDetectedPerson.msg
-   CompositeDetectedPersons.msg
-   TrackedPerson.msg
-   TrackedPersons.msg
-   TrackedPerson2d.msg
-   TrackedPersons2d.msg
-   TrackedGroup.msg
-   TrackedGroups.msg
-   ImmDebugInfo.msg
-   ImmDebugInfos.msg
-   TrackingTimingMetrics.msg
-)
-
-# Generate services in the 'srv' folder
-add_service_files(
-  FILES
-  GetPersonTrajectories.srv
-)
-
-## Generate added messages and services with any dependencies listed here
-generate_messages(
-   DEPENDENCIES
-   geometry_msgs
-   std_msgs
-)
-
-###################################
-## catkin specific configuration ##
-###################################
-catkin_package(
-  CATKIN_DEPENDS roscpp std_msgs geometry_msgs message_runtime 
-)
+ament_package()

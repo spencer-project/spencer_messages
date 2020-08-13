@@ -1,7 +1,7 @@
 # Message defining an entry of a person trajectory.
 #
 
-time     stamp           # age of the track
+builtin_interfaces/Time     stamp           # age of the track
 bool     is_occluded     # if the track is currently not matched by a detection
 uint64   detection_id    # id of the corresponding detection in the current cycle (undefined if occluded)
 
