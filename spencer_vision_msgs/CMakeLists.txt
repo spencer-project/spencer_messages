@@ -1,44 +1,30 @@
-cmake_minimum_required(VERSION 2.8.3)
+cmake_minimum_required(VERSION 3.5)
 project(spencer_vision_msgs)
 
-find_package(catkin REQUIRED COMPONENTS
-  roscpp
-  roslib
-  std_msgs
-  sensor_msgs
-  geometry_msgs
-  message_generation
+# Default to C++14
+if(NOT CMAKE_CXX_STANDARD)
+  set(CMAKE_CXX_STANDARD 14)
+endif()
+
+if(CMAKE_COMPILER_IS_GNUCXX OR CMAKE_CXX_COMPILER_ID MATCHES "Clang")
+  add_compile_options(-Wall -Wextra -Wpedantic)
+endif()
+
+find_package(ament_cmake REQUIRED)
+find_package(builtin_interfaces REQUIRED)
+find_package(geometry_msgs REQUIRED)
+find_package(std_msgs REQUIRED)
+find_package(sensor_msgs REQUIRED)
+find_package(rosidl_default_generators REQUIRED)
+
+rosidl_generate_interfaces(${PROJECT_NAME}
+  "msg/PersonImage.msg"
+  "msg/PersonImages.msg"
+  "msg/PersonROI.msg"
+  "msg/PersonROIs.msg"
+  DEPENDENCIES builtin_interfaces geometry_msgs std_msgs sensor_msgs
 )
 
-################################################
-## Declare ROS messages, services and actions ##
-################################################
+ament_export_dependencies(rosidl_default_runtime)
 
-# Generate messages in the 'msg' folder
-add_message_files(
-   FILES
-   PersonImage.msg
-   PersonImages.msg
-   PersonROI.msg
-   PersonROIs.msg
-)
-
-# Generate services in the 'srv' folder
-#add_service_files(
-#  FILES
-#)
-
-## Generate added messages and services with any dependencies listed here
-generate_messages(
-   DEPENDENCIES
-   geometry_msgs
-   sensor_msgs
-   std_msgs
-)
-
-###################################
-## catkin specific configuration ##
-###################################
-catkin_package(
-  CATKIN_DEPENDS roscpp std_msgs sensor_msgs geometry_msgs message_runtime 
-)
+ament_package()

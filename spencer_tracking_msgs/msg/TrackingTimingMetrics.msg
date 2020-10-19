@@ -1,7 +1,7 @@
 # Message with timing values for analyzing the efficency 
 #
 
-Header              header                  # Header containing timestamp etc. of this message
+std_msgs/Header              header                  # Header containing timestamp etc. of this message
 uint64              track_count             # number of person currentl tracked
 uint64              cycle_no                # incremented number of cycles        
 float32             average_cycle_time      # average time for one cycle of tracker
